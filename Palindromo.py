@@ -10,10 +10,13 @@ Imprime un mensaje indicando si la cadena es un palíndromo o no.
 '''
 palindromo = input("Ingrese una cadena de texto: ")
 
+# Función para verificar si una cadena es un palíndromo
 def es_palindromo(cadena):
-    cadena = cadena.replace(" ", "").lower()
-    return cadena == cadena[::-1]
+    cadena = cadena.lower()
+    cadena_sin_espacios = ''.join(c for c in cadena if c.isalnum())  # Ignorar espacios y caracteres no alfanuméricos
+    return cadena_sin_espacios == cadena_sin_espacios[::-1]
 
+# Verificar si la cadena es un palíndromo e imprimir el resultado
 if es_palindromo(palindromo):
     print(f"{palindromo} es un palíndromo.")
 else:
